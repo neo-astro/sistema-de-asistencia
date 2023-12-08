@@ -1,0 +1,31 @@
+<mat-toolbar class="d-flex justify-content-between">
+  <h1 class="text-center"> <strong>Tipos de Suscripciones</strong></h1>
+  <button class="fw-bold" mat-raised-button (click)="openAddForm()">
+    Adicionar
+  </button>
+</mat-toolbar>
+
+<div class="container-fluid flex-wrap d-flex justify-content-evenly">
+
+  <div  *ngFor="let dato of TipoSuscripcion" class="card" style="width: 18rem;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1qbpXem9xoFhpo_NkP0dp1vkBr4h5-ZJGag&usqp=CAU" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center fw-bold">{{dato.nombre}}</h5>
+      <!-- <p class="card-text"><strong>Precio :</strong> {{dato.precio}}</p>
+      <p class="card-text"><strong>Tiempo:</strong> {{dato.tiempo}} dias</p> -->
+      <div class="d-flex justify-content-evenly align-content-between">
+
+
+        <button mat-icon-button color="primary" (click)="openEditForm(dato)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteSucripcion(dato.idTipoSuscripcion)">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+    </div>
+  </div>
+
+
+
+</div>

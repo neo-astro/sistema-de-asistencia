@@ -1,0 +1,75 @@
+.card {
+  width: 190px;
+  height: 254px;
+  margin: 0 auto;
+  background-color: linear-gradient(225deg, #ffffff, #dbd9d9);
+  border-radius: 8px;
+  z-index: 1;
+  border-radius: 30px;
+background: #e8e5e5;
+box-shadow:   -10px 10px 10px #b1b0b0,
+-1px -1px 2px #ffffff;
+             width: 440px;
+             height: 90vh;
+             margin-right: 4px ;
+ }
+ 
+img{
+  object-fit: contain;
+}
+
+ .tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+ }
+ 
+ .circle {
+  padding: 0 4px;
+ }
+ 
+ .box {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+ }
+ 
+ .red {
+  background-color: #ff605c;
+ }
+ 
+ .yellow {
+  background-color: #ffbd44;
+ }
+ 
+ .green {
+  background-color: #00ca4e;
+ }
+ 
+
+ .type-writer{
+	overflow: hidden;
+	border-right: .15em solid rgb(237, 237, 236);
+	white-space: nowrap;
+	margin:0 auto;
+	letter-spacing: .15em;
+	animation:
+	typing 2s steps(60, end),
+	blink-caret 1.75s step-end ;
+}
+
+
+
+@keyframes typing{
+	from{width:0;}
+	to{width:100%;}
+}
+@keyframes blink-caret {
+	from {border-color: rgb(39, 39, 39);}
+  to{border-color:transparent;}
+
+
+}

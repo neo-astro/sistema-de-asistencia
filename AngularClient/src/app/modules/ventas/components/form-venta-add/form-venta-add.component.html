@@ -1,0 +1,33 @@
+<div mat-dialog-title>
+  <h1>Crear nuevo plan</h1>
+</div>
+<form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+      <div class="row">
+          <mat-form-field appearance="outline">
+              <mat-label>Cliente Nombre</mat-label>
+              <input class="text-capitalize" matInput type="text" pattern="[A-Za-z\s]+" minlength="3" placeholder="Pepe" formControlName="nombreCliente">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Cedula</mat-label>
+            <input matInput type="text" maxlength="10" #ci (input)="formatCi($event)" placeholder="09xxxxxx" formControlName="ci">
+        </mat-form-field>
+
+
+
+        <mat-form-field>
+          <mat-label>Tipo de suscripcion</mat-label>
+          <mat-select formControlName="idSuscripcion" >
+          
+              <mat-option  *ngFor="let dato of suscripciones" [value]="dato.idSuscripcion">{{dato.nombre}}</mat-option>
+            
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+  </div>
+  <div mat-dialog-actions class="action">
+      <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+      <button mat-raised-button color="primary" type="submit">Crear</button>
+  </div>
+</form>

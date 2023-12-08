@@ -1,0 +1,75 @@
+<div mat-dialog-title>
+  <h1 class="text-center">Crear Suscripiones</h1>
+</div>
+<form [formGroup]="form" class="container-fluid" (ngSubmit)="onFormSubmit()">
+
+  <div class="d-flex justify-content-around">
+
+    <div mat-dialog-content class="content w-50">
+      <div class="row">
+          <mat-form-field appearance="outline">
+              <mat-label>Nombre</mat-label>
+
+              <input class="text-capitalize" pattern="[A-Za-z\s]+" matInput type="text" placeholder="Ex. fitme" formControlName="nombre">
+          </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Descuento</mat-label>
+          <input matInput type="number" max="50" oninput="this.value <= 0?  this.value = 1 : this.value=this.value;  this.value >=50? this.value = 50:this.value = this.value"   placeholder="20.00" formControlName="descuento">
+        </mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label>Precio</mat-label>
+              <input         oninput="this.value <= 0 ?  this.value = 1 : null"
+               matInput type="text"  #precio (input)="formatPrecio($event)" placeholder="20.00" formControlName="precio">
+          </mat-form-field>
+
+      </div>
+      
+  </div>
+
+  <div mat-dialog-content class="content w-50">
+    <div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>Duracion</mat-label>
+        <input matInput type="number" oninput="this.value <= 0?  this.value = 1 : this.value=this.value" placeholder="Numero de dias" formControlName="duracion">
+    </mat-form-field>
+
+
+<!-- 
+        
+      <mat-form-field>
+        <mat-label>Tipo de suscripcion</mat-label>
+        <mat-select [(value)]="tipoSuscripciones">
+          <mat-option *ngFor="let dato of tipoSuscripciones" 
+          [value]="dato.idTipoSuscripcion">
+          {{dato.nombre}}
+        </mat-option>
+        
+        </mat-select>
+      </mat-form-field> -->
+      
+      <mat-form-field>
+        <mat-label>Tipo de suscripcion</mat-label>
+        <mat-select formControlName="idTipoSuscripcion" >
+        
+            <mat-option  *ngFor="let dato of tipoSuscripciones" [value]="dato.idTipoSuscripcion">{{dato.nombre}}</mat-option>
+          
+        </mat-select>
+      </mat-form-field>
+
+
+      </div>
+    
+    </div>
+
+
+
+  </div>
+
+
+  <div mat-dialog-actions class="action">
+      <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+      <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+  </div>
+</form>
+

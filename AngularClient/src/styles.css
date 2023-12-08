@@ -1,0 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Fira+Code:wght@300&display=swap');
+*{
+  font-family: 'Fira Code', monospace;
+  
+}
+
+em{
+  color: #e71515;
+  font-weight: bold;
+}
+
+.ng-invalid.ng-touched{
+  border-color: red;
+}
+
+.card{
+  margin-top: 10px;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px #cabcbc;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
